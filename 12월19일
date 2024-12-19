@@ -1,5 +1,19 @@
-편의점 과자 - 제목
-필드명 : 번호 , 과자명, 가격
+SQL - Structured Query Language(구조적 쿼리 언어)
+
+DML, DCL, DDL 세가지가 있다.
+
+
+만들기 쿼리문 - create 
 
 데이터베이스 만들기 - create database 데이터베이스이름;
 table 만들기 - create table 테이블이름 ( 컬럼명 데이터타입 , 컬럼명 데이터타입, 컬럼명 데이터타입);
+
+
+편의점 과자 - 제목
+필드명 : 번호 , 과자명, 가격
+create database test1;
+create table snack( num int , snack_name varchar(50) , cost int);
+
+데이터 저장 쿼리문 - insert into
+insert into 테이블명 (컬럼명, 컬럼명, 컬럼명 ) values(데이터,데이터,데이터);
+
