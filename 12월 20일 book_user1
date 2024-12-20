@@ -42,4 +42,51 @@ mysql> select * from computer_book;
 +-------+------+------+--------+
 1 row in set (0.00 sec)
 
+mysql> create table art_book(title varchar(128), page int(4) not null,
+    -> cost int, author varchar(64) );
+Query OK, 0 rows affected, 1 warning (0.05 sec)
+
+mysql> desc computer_book;
++--------+--------------+------+-----+---------+-------+
+| Field  | Type         | Null | Key | Default | Extra |
++--------+--------------+------+-----+---------+-------+
+| title  | varchar(128) | YES  |     | NULL    |       |
+| page   | int          | YES  |     | NULL    |       |
+| cost   | int          | YES  |     | NULL    |       |
+| author | varchar(64)  | YES  |     | NULL    |       |
++--------+--------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> desc art_book;
++--------+--------------+------+-----+---------+-------+
+| Field  | Type         | Null | Key | Default | Extra |
++--------+--------------+------+-----+---------+-------+
+| title  | varchar(128) | YES  |     | NULL    |       |
+| page   | int          | NO   |     | NULL    |       |
+| cost   | int          | YES  |     | NULL    |       |
+| author | varchar(64)  | YES  |     | NULL    |       |
++--------+--------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> insert into art_book(title, cost) values('html5' , 23000);
+ERROR 1364 (HY000): Field 'page' doesn't have a default value
+mysql>
+mysql> insert into art_book(title, page, cost) values('html5', 312,23000);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> create table music_book( title varchar(128), page int(4),
+    -> cost int default 0 );
+Query OK, 0 rows affected, 1 warning (0.04 sec)
+
+mysql> desc music_book;
++-------+--------------+------+-----+---------+-------+
+| Field | Type         | Null | Key | Default | Extra |
++-------+--------------+------+-----+---------+-------+
+| title | varchar(128) | YES  |     | NULL    |       |
+| page  | int          | YES  |     | NULL    |       |
+| cost  | int          | YES  |     | 0       |       |
++-------+--------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+///----------   book_list 테이블 작업 -----------------///////////
 mysql>
