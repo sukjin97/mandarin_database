@@ -89,4 +89,47 @@ mysql> desc music_book;
 3 rows in set (0.00 sec)
 
 ///----------   book_list 테이블 작업 -----------------///////////
+mysql> create table book_list(num int(8) not null, title varchar(128) not null,
+    -> cost int(6) default 0, author varchar(64) );
+Query OK, 0 rows affected, 2 warnings (0.05 sec)
+
+mysql> insert into book_list values(1, 'java언어', 35000, '김삿갓');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into book_list values(2, 'C 언어', 25000, '박문수');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into book_list values(3, 'html&css', 31500, '임꺽정');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into book_list values(4, '스피링3.0', 31000, '이순신');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into book_list values(5, '그림으로보는유니티', 29800, '장영실');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into book_list values(6, '그림으로보는자바', 34500, '정도전');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into book_list values(7, '그림으로보는자료구조', 26000, '홍길동');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into book_list values(8, 'IT의 미래', 15000, '김춘추');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from book_list;
++-----+----------------------+-------+--------+
+| num | title                | cost  | author |
++-----+----------------------+-------+--------+
+|   1 | java언어             | 35000 | 김삿갓 |
+|   2 | C 언어               | 25000 | 박문수 |
+|   3 | html&css             | 31500 | 임꺽정 |
+|   4 | 스피링3.0            | 31000 | 이순신 |
+|   5 | 그림으로보는유니티   | 29800 | 장영실 |
+|   6 | 그림으로보는자바     | 34500 | 정도전 |
+|   7 | 그림으로보는자료구조 | 26000 | 홍길동 |
+|   8 | IT의 미래            | 15000 | 김춘추 |
++-----+----------------------+-------+--------+
+8 rows in set (0.00 sec)
+
 mysql>
