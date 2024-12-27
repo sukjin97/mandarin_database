@@ -44,11 +44,12 @@ create table student(
 
 
 create table lecture(
-	c_no int primary key,
+	c_no int,
 	p_no int,
 	day_week varchar(3),
 	start_time varchar(1),
-	room_no varchar(4)
+	room_no varchar(4),
+primary key(c_no,p_no)
 );
 
 create table enrollment(
